@@ -7,7 +7,7 @@ import plotly.express as px
 from dash import Dash, dcc, html, Input, Output
 import numpy as np
 import requests
-from io import StrinIO
+from io import StringIO
 
 FILE_ID = "14uvdYn_KOqZvlB3YeBp7kIxVF9HKN3If"
 csv_url = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
