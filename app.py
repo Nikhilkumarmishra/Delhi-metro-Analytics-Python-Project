@@ -6,12 +6,19 @@ import pandas as pd
 import plotly.express as px
 from dash import Dash, dcc, html, Input, Output
 import numpy as np
+import requests
+from io import StrinIO
+
+FILE_ID = "14uvdYn_KOqZvlB3YeBp7kIxVF9HKN3If"
+csv_url = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
+response = requests.get(csv_url)
+df = pd.read_csv(StringIO(response.text))
 
 # -----------------------------
 # Load & clean dataset
 # -----------------------------
-FILE = "delhi_metro.csv"
-df = pd.read_csv(FILE)
+# FILE = "delhi_metro.csv"
+# df = pd.read_csv(FILE)
 
 app= Dash()
 server = app.server
